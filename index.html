@@ -258,7 +258,7 @@
         <section>
             <h2>Recepción</h2>
             <div class="evento">
-                <p style="font-size:1.4rem;">Salón de Fiestas Media Luna<br>Calle Juan de la Barrera 18 El Danfhi</p>
+                <p style="font-size:1.4rem;">Salón de Fiestas Media Luna<br>Calle Juan de la Barrera 18 El Danfhi<br>Mixquiahuala, Hgo.</p>
                 <h2 style="font-size:2.2rem; margin:15px 0;">3:00 pm</h2>
                 <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://maps.app.goo.gl/jt9nguDdJ7nAweDS7"
                     alt="QR para Maps de Recepción" class="qr-code">
@@ -276,6 +276,7 @@
     </div>
     <script>
         const fechaEvento = new Date("June 13, 2026 12:00:00").getTime();
+        const labelsElement = document.querySelector(".labels");  // Las etiquetas
         const countdown = setInterval(function () {
             const ahora = new Date().getTime();
             const distancia = fechaEvento - ahora;
@@ -288,6 +289,9 @@
             if (distancia < 0) {
                 clearInterval(countdown);
                 document.getElementById("countdown").innerHTML = "¡HOY ES EL GRAN DÍA!";
+                 if (labelsElement) {
+                    labelsElement.style.display = "none";
+                }
             }
         }, 1000);
 
@@ -320,3 +324,4 @@
 </body>
 
 </html>
+
